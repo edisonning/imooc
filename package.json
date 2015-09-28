@@ -1,0 +1,33 @@
+{
+  "name": "imooc",
+  "version": "0.0.1",
+  "description": "imooc",
+  "main": "app.js",
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0",
+    "moment": "^2.10.6",
+    "mongoose": "^4.1.8",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edisonning/sxdh.git"
+  },
+  "keywords": [
+    "imooc",
+    "movie"
+  ],
+  "author": "edison",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edisonning/sxdh/issues"
+  },
+  "homepage": "https://github.com/edisonning/sxdh"
+}

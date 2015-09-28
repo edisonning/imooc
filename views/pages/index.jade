@@ -1,0 +1,31 @@
+extends ../layout
+block content
+    #carousel-example-generic.carousel.slide(data-ride='carousel')
+      ol.carousel-indicators
+        li.active(data-target='#carousel-example-generic', data-slide-to='0')
+      .carousel-inner(role='listbox')
+        .item.active
+          img(src='images/chrome-big.jpg', alt='...')
+          .carousel-caption
+        .item
+          img(src='images/chrome-big.jpg', alt='...')
+          .carousel-caption
+      a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+      a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next
+     
+      .container
+         hr
+         .row
+            each item in movies
+               .col-md-3
+                  .thumbnail
+                     a(href="/movie/#{item._id}" title="编码规范")
+                        img(src="#{item.poster}", alt="#{item.title}" height="100%"  )
+                     .caption
+                        h3 #{item.title}
+                        p.text-danger: a.btn.btn-primary(href="/movie/#{item._id}", role="button") 产品详情
+
