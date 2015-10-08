@@ -3,14 +3,20 @@
     .navbar-header
       a.navbar-brand(href="/")
         img(alt="brand" src="/images/logo.jpg")
-    p.navbar-text.navbar-right
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
-      span &nbsp;&nbsp;&nbsp;
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
     p.navbar-text.navbar-left
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+      a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 栏目一
       span &nbsp;&nbsp;&nbsp;
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
+      a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 栏目二
+    if user
+      p.navbar-text.navbar-right
+        span 欢迎您,#{user.username}
+        span &nbsp;&nbsp;|&nbsp;
+        a.navbar-link(href="/logout") 登出
+    else   
+      p.navbar-text.navbar-right
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+        span &nbsp;&nbsp;&nbsp;
+        a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
 #signupModal.modal.fade
   .modal-dialog
     .modal-content
@@ -19,10 +25,25 @@
         .modal-body
           .form-group
             label(for="signupName") 用户名
-            input#signupModal.form-control(name="user[userName]", type="text")
+            input#signupModal.form-control(name="user[username]", type="text")
           .form-group
             label(for="signupPassword") 密码
             input#signupModal.form-control(name="user[password]", type="text")
         .modal-footer
           button.btn.btn-default(type="button", data-dismiss="modal") 关闭
           button.btn.btn-success(type="submit") 提交
+#signinModal.modal.fade
+  .modal-dialog
+    .modal-content
+      form(method="POST" action="/user/signin")
+        .modal-header 登录
+        .modal-body
+          .form-group
+            label(for="signupname") 用户名
+            input#signupModal.form-control(name="user[username]", type="text")
+          .form-group
+            label(for="signupPassword") 密码
+            input#signupModal.form-control(name="user[password]", type="text")
+        .modal-footer
+          button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+          button.btn.btn-success(type="submit") 登录
