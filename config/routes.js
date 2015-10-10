@@ -22,7 +22,7 @@ module.exports = function(app){
 	      console.log(err)
 	    }
 	    res.render('index',{
-	      title:'继续教育 首页',
+	      title:'网络传媒首页',
 	      movies: movies
 	    })
 	  })

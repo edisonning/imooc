@@ -1,49 +1,52 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .container
-    .navbar-header
-      a.navbar-brand(href="/")
-        img(alt="brand" src="/images/logo.jpg")
-    p.navbar-text.navbar-left
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 栏目一
-      span &nbsp;&nbsp;&nbsp;
-      a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 栏目二
-    if user
-      p.navbar-text.navbar-right
-        span 欢迎您,#{user.username}
-        span &nbsp;&nbsp;|&nbsp;
-        a.navbar-link(href="/logout") 登出
-    else   
-      p.navbar-text.navbar-right
-        a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
-        span &nbsp;&nbsp;&nbsp;
-        a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
-#signupModal.modal.fade
-  .modal-dialog
-    .modal-content
-      form(method="POST" action="/user/signup")
-        .modal-header 注册
-        .modal-body
-          .form-group
-            label(for="signupName") 用户名
-            input#signupModal.form-control(name="user[username]", type="text")
-          .form-group
-            label(for="signupPassword") 密码
-            input#signupModal.form-control(name="user[password]", type="text")
-        .modal-footer
-          button.btn.btn-default(type="button", data-dismiss="modal") 关闭
-          button.btn.btn-success(type="submit") 提交
-#signinModal.modal.fade
-  .modal-dialog
-    .modal-content
-      form(method="POST" action="/user/signin")
-        .modal-header 登录
-        .modal-body
-          .form-group
-            label(for="signupname") 用户名
-            input#signupModal.form-control(name="user[username]", type="text")
-          .form-group
-            label(for="signupPassword") 密码
-            input#signupModal.form-control(name="user[password]", type="text")
-        .modal-footer
-          button.btn.btn-default(type="button", data-dismiss="modal") 关闭
-          button.btn.btn-success(type="submit") 登录
+header.header-frontend
+      .navbar.navbar-default.navbar-static-top
+        .container
+          .navbar-header
+            button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand(href='index.html')
+              | Flat
+              span Lab
+          .navbar-collapse.collapse
+            ul.nav.navbar-nav
+              li.active
+                a(href='index.html') 首页
+              li
+                a(href='about.html') 本地供应
+              li
+                a(href='services.html') 查找厂家
+              li
+                a(href='services.html') 特价商城
+              li
+                a(href='services.html') 行业招聘  
+              li
+                a(href='portfolio.html') 新品招商
+              li
+                a(href='price.html') 转让处理
+              li
+                a(href='blog.html') 求购中心
+              li
+                a(href='contact.html') 终端信息库
+              li
+                input.form-control.search(type='text', placeholder=' Search')
+              li
+                a.navbar-link(href="#", data-toggle="modal", data-target="#signupModal") 注册
+              li
+                a.navbar-link(href="#", data-toggle="modal", data-target="#signinModal") 登录
+      #signupModal.modal.fade
+        .modal-dialog
+          .modal-content
+            form(method="POST" action="/user/signup")
+              .modal-header 注册
+              .modal-body
+                .form-group
+                  label(for="signupName") 用户名
+                  input#signupModal.form-control(name="user[userName]", type="text")
+                .form-group
+                  label(for="signupPassword") 密码
+                  input#signupModal.form-control(name="user[userName]", type="text")
+              .modal-footer
+                button.btn.btn-default(type="button", data-dismiss="modal") 关闭
+                button.btn.btn-success(type="submit") 提交
